@@ -7,7 +7,9 @@ const multiplyBtn = document.getElementById("multiply-btn"),
 
 var num1 = 0,
     num2 = 0,
-    operation = 0;
+    operation = 0,
+    ans = 0,
+    prevAns = [];
 
 // Set variable "num1" and "operation" to finish it up with the "number2" function
 
@@ -54,22 +56,28 @@ function number2(){ // "sets" num2 and depending on previous "operation" does it
     num2 = parseInt(numInput.value);
 
     if (operation == 0){ // Addition
-        numInput.value = (num1 + num2);
+        ans = num1 + num2;
+        numInput.value = (ans);
     }
 
     if (operation == 1){ // Subtraction
-        numInput.value = (num1 - num2);
+        ans = num1 - num2;
+        numInput.value = (ans);
     }
 
     if (operation == 2){ // Multiplication
-        numInput.value = (num1 * num2);
+        ans = num1 * num2;
+        numInput.value = (ans);
     }
 
     if (operation == 3){ // Division
-        numInput.value = (num1 / num2);
+        ans = num1 / num2;
+        numInput.value = (ans);
     }
 
     numInput.focus();
+
+    prevAns.push(ans)
 
 }
 
