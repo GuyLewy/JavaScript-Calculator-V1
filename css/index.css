@@ -1,0 +1,28 @@
+.container{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+.answer{
+    justify-content: center;
+}
+
+.input{
+    justify-content: center;
+}
+
+.operations{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+#equal-btn{
+    width: 100%;
+    margin-top: 5px;
+}
+
