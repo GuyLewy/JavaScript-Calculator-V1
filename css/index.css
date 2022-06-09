@@ -1,5 +1,6 @@
 .container{
-    width: 90%;
+    width: 80%;
+    max-width: 1200px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,16 +14,63 @@
 
 .input{
     justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#number-input{
+    width: 100%;
+    font-size: 50px;
+    padding: 0;
+    margin: 0 auto;
+    background-color: #B3C2AF;
+    letter-spacing: 5px;
+}
+
+.input-btns{
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.number-btns{
+    flex-basis: 95%;
+}
+
+.input-btns button{
+    width: 32%;
+    height: auto;
+    aspect-ratio: 1;
+    align-items: space-between;
+    font-size: 250%;
+    margin: 2.5px 0;
 }
 
 .operations{
     display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
+    flex-wrap: wrap-reverse;
+}
+
+.operations button{
+    width: 100%;
+    aspect-ratio: 1;
+    font-size: 250%;
+    background-color: darkgrey;
+}
+
+#prev-answers{
+    background-color: darkgrey;
+}
+
+#prev-answers:hover{
+    transform: rotateZ(90deg);
 }
 
 #equal-btn{
-    width: 100%;
-    margin-top: 5px;
+    background-color: orange;
 }
+
+
 

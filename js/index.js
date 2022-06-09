@@ -3,13 +3,17 @@ const multiplyBtn = document.getElementById("multiply-btn"),
     subtractBtn = document.getElementById("subtract-btn"),
     divideBtn = document.getElementById("divide-btn"),
     equalBtn = document.getElementById("equal-btn"),
-    numInput = document.getElementById("number-input");
+    numInput = document.getElementById("number-input"),
+    prevAnsListBtn = document.getElementById("prev-answers"),
+    prevAnsList = document.getElementById("prev-ans-list"),
+    numberBtns = document.getElementsByClassName("number-btn");
 
 var num1 = 0,
     num2 = 0,
     operation = 0,
     ans = 0,
     prevAns = [];
+    showingAnswers = 0;
 
 // Set variable "num1" and "operation" to finish it up with the "number2" function
 
@@ -81,3 +85,31 @@ function number2(){ // "sets" num2 and depending on previous "operation" does it
 
 }
 
+prevAnsListBtn.addEventListener("click", function showList(){
+    
+    if(showingAnswers == 1){
+        prevAnsList.innerHTML = ("");
+        showingAnswers = 0;
+    }
+
+    else {
+        for(let i = 0; i < prevAns.length; i++){
+            var li = document.createElement("li")
+            li.appendChild(document.createTextNode(prevAns[prevAns.length - i - 1]));
+            prevAnsList.appendChild(li);
+            showingAnswers = 1;
+        }
+    }
+})
+
+// Checks wether a number button is pressed and adds it to the textbox
+
+  // Get all the buttons to an Array
+  buttons = document.getElementsByClassName("number-btn")
+  
+  // Add click event listener to all button elements and insert their inner text as value to the text field
+  Array.prototype.forEach.call (buttons, (button) => {
+    button.addEventListener("click", () => {
+      numInput.value += button.innerText
+    })
+  })
