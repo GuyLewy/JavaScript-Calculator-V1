@@ -19,44 +19,41 @@
             <div class="input-btns">
 
                 <div class="number-btns">
-                    <div class="number-btns-one">
+                    <div id="number-btns-one" class="number-btns-row">
                         <button class="number-btn" id="number 7">7</button>
                         <button class="number-btn" id="number 8">8</button>
                         <button class="number-btn" id="number 9">9</button>
+                        <button id="divide-btn" class="operator">/</button>
                     </div>
 
-                    <div class="number-btns-two">
+                    <div id="number-btns-two" class="number-btns-row">
                         <button class="number-btn" id="number 4">4</button>
                         <button class="number-btn" id="number 5">5</button>
                         <button class="number-btn" id="number 6">6</button>
+                        <button id="multiply-btn" class="operator">*</button>
                     </div>
 
-                    <div class="number-btns-three">
+                    <div id="number-btns-three" class="number-btns-row">
                         <button class="number-btn" id="number 1">1</button>
                         <button class="number-btn" id="number 2">2</button>
                         <button class="number-btn" id="number 3">3</button>
+                        <button id="subtract-btn" class="operator">-</button>
                     </div>
 
-                    <div class="number-btns-four">
+                    <div id="number-btns-four" class="number-btns-row">
                         <button id="prev-answers">></button>
                         <button class="number-btn" id="number 0">0</button>
                         <button id="equal-btn">=</button>
+                        <button id="add-btn" class="operator">+</button>
                     </div>
 
-                </div>
-                
-                <div class="operations">
-                    <button id="add-btn" class="operator">+</button>
-                    <button id="subtract-btn" class="operator">-</button>
-                    <button id="multiply-btn" class="operator">*</button>
-                    <button id="divide-btn" class="operator">/</button>
                 </div>
 
             </div> <!-- Input-btns -->
 
-        </div> <!-- Input -->
+            <ul id="prev-ans-list" class="hidden"></ul>
 
-        <ul id="prev-ans-list"></ul>
+        </div> <!-- Input -->
     </div> <!-- Container -->
 
     <script src="../js/index.js"> </script>

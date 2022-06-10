@@ -1,3 +1,4 @@
+// Buttons are set to constants
 const multiplyBtn = document.getElementById("multiply-btn"),
     addBtn = document.getElementById("add-btn"),
     subtractBtn = document.getElementById("subtract-btn"),
@@ -12,7 +13,7 @@ var num1 = 0,
     num2 = 0,
     operation = 0,
     ans = 0,
-    prevAns = [];
+    prevAns = [],
     showingAnswers = 0;
 
 // Set variable "num1" and "operation" to finish it up with the "number2" function
@@ -81,25 +82,22 @@ function number2(){ // "sets" num2 and depending on previous "operation" does it
 
     numInput.focus();
 
-    prevAns.push(ans)
 
-}
-
-prevAnsListBtn.addEventListener("click", function showList(){
-    
-    if(showingAnswers == 1){
-        prevAnsList.innerHTML = ("");
-        showingAnswers = 0;
+    if (isNaN(ans) != true){ // Adds answer to previous answers list as long as it has a type
+        prevAns.push(ans);
+        var li = document.createElement("li");
+        li.appendChild(document.createTextNode(ans));
+        prevAnsList.appendChild(li);
     }
 
     else {
-        for(let i = 0; i < prevAns.length; i++){
-            var li = document.createElement("li")
-            li.appendChild(document.createTextNode(prevAns[prevAns.length - i - 1]));
-            prevAnsList.appendChild(li);
-            showingAnswers = 1;
-        }
+        numInput.select();
     }
+}
+
+prevAnsListBtn.addEventListener("click", function showList(){
+    prevAnsList.classList.toggle("hidden"); //  .hidden{display: none;}
+    prevAnsListBtn.classList.toggle("clicked");
 })
 
 // Checks wether a number button is pressed and adds it to the textbox
@@ -113,3 +111,6 @@ prevAnsListBtn.addEventListener("click", function showList(){
       numInput.value += button.innerText
     })
   })
+
+
+

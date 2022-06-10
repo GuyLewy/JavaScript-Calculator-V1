@@ -20,8 +20,9 @@
 }
 
 #number-input{
-    width: 100%;
+    flex-basis: 100%;
     font-size: 50px;
+    border: solid 1px black;
     padding: 0;
     margin: 0 auto;
     background-color: #B3C2AF;
@@ -29,47 +30,73 @@
 }
 
 .input-btns{
-    display: flex;
     width: 80%;
     margin: 0 auto;
     margin-top: 30px;
+    display: flex;
+    flex-direction: column;
 }
 
-.number-btns{
-    flex-basis: 95%;
+.number-btns-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .input-btns button{
-    width: 32%;
+    width: 23%;
     height: auto;
     aspect-ratio: 1;
-    align-items: space-between;
     font-size: 250%;
     margin: 2.5px 0;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.operations{
-    display: flex;
-    flex-wrap: wrap-reverse;
+.input-btns button:active{
+    box-shadow: none;
 }
 
-.operations button{
-    width: 100%;
-    aspect-ratio: 1;
-    font-size: 250%;
+.number-btn{
+    border: 1px solid darkgray;
+}
+
+.operator {
     background-color: darkgrey;
+    border: 1px solid black;
 }
 
 #prev-answers{
     background-color: darkgrey;
+    border: 1px solid black;
 }
 
-#prev-answers:hover{
-    transform: rotateZ(90deg);
+.clicked{
+    box-shadow: none !important; 
+    transform: rotate(90deg);
 }
 
 #equal-btn{
     background-color: orange;
+    border: 1px solid black;
+}
+
+#prev-ans-list{
+    margin: 10px 0 auto;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#prev-ans-list li{
+    text-decoration: none;
+    list-style: none;
+    font-size: 25px;
+    margin: 2.5px 0 auto;
+    align-items: center;
+    text-justify: center;
+}
+
+.hidden {
+    display: none !important;
 }
 
 
